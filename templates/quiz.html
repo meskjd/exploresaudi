@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h2>Find Your Dream Destination!</h2>
+
+    {% if result %}
+        <h3>Your top recommendations:</h3>
+        <ul>
+            {% for city, score in result %}
+                <li>
+                    {{ city }} (Score: {{ score }})
+                    <form action="/city/{{ city|lower }}" method="get" style="display:inline;">
+                        <button type="submit">Explore {{ city }}</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Home</a>
+    {% else %}
+        <form method="POST">
+            <h4>1. What is your age group?</h4>
+            <input type="radio" name="age" value="25" required> 18-30<br>
+            <input type="radio" name="age" value="40"> 31-50<br>
+            <input type="radio" name="age" value="60"> 51+<br><br>
+
+            <h4>2. Preferred climate?</h4>
+            <input type="radio" name="climate" value="hot" required> Hot<br>
+            <input type="radio" name="climate" value="cold"> Cold<br><br>
+
+            <h4>3. What is your budget?</h4>
+            <input type="radio" name="budget" value="low" required> Low<br>
+            <input type="radio" name="budget" value="mid"> Mid<br>
+            <input type="radio" name="budget" value="high"> High<br><br>
+
+            <h4>4. Trip type?</h4>
+            <input type="radio" name="tripType" value="adventure" required> Adventure<br>
+            <input type="radio" name="tripType" value="culture"> Culture<br>
+            <input type="radio" name="tripType" value="relax"> Relax<br><br>
+
+            <h4>5. Preferred transport?</h4>
+            <input type="radio" name="transport" value="plane" required> Plane<br>
+            <input type="radio" name="transport" value="car"> Car<br>
+            <input type="radio" name="transport" value="train"> Train<br><br>
+
+            <h4>6. Preferred region?</h4>
+            <input type="radio" name="region" value="north" required> North<br>
+            <input type="radio" name="region" value="west"> West<br>
+            <input type="radio" name="region" value="east"> East<br>
+            <input type="radio" name="region" value="south"> South<br>
+            <input type="radio" name="region" value="central"> Central<br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+</body>
+</html>
 
