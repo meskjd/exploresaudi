@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explore Saudi</title>
+</head>
+<body>
+    <h1>Explore Saudi</h1>
+
+    <!-- Language Selection -->
+    <p>
+        <a href="/?lang=en">English</a> | <a href="/?lang=ar">العربية</a>
+    </p>
+
+    <!-- Hotels Section -->
+    <div id="hotels">
+        <h2>Hotels</h2>
+        {% if lang == 'ar' %}
+            <ul>
+                <li>الرياض - حياة ريجنسي</li>
+                <li>جدة - فندق نارسيس</li>
+                <li>العلا - منتجع هابيتاس</li>
+            </ul>
+        {% else %}
+            <ul>
+                <li>Riyadh - Hyatt Regency</li>
+                <li>Jeddah - Narcissus Hotel</li>
+                <li>AlUla - Habitas Resort</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Landmarks Section -->
+    <div id="landmarks">
+        <h2>Landmarks</h2>
+        {% if lang == 'ar' %}
+            <ul>
+                <li>الرياض - بوليفارد الرياض</li>
+                <li>العلا - جبل الفيل</li>
+                <li>جدة - البلد القديمة</li>
+            </ul>
+        {% else %}
+            <ul>
+                <li>Riyadh - Boulevard Riyadh</li>
+                <li>AlUla - Elephant Rock</li>
+                <li>Jeddah - Old Town</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Quiz Link -->
+    <p><a href="/quiz">Take the Quiz!</a></p>
+</body>
+</html>
 
